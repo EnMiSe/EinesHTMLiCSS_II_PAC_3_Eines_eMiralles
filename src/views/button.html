@@ -1,0 +1,55 @@
+<div class="flex justify-center items-center mt-10">
+    <div class="relative">
+        <button
+            onclick="toggleDropdown()"
+            class="px-4 py-2 bg-blue-800 text-white rounded focus:outline-none focus:ring"
+        >
+            Ordenar Candidats
+        </button>
+
+        <div
+            id="dropdown"
+            class="hidden absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+        >
+            <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >Ordenar per edat</a
+            >
+            <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >Ordenar per nom</a
+            >
+            <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >Ordenar per cognom</a
+            >
+        </div>
+    </div>
+</div>
+<script>
+    function toggleDropdown() {
+        var dropdown = document.getElementById("dropdown");
+        if (dropdown.classList.contains("hidden")) {
+            dropdown.classList.remove("hidden");
+        } else {
+            dropdown.classList.add("hidden");
+        }
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches(".dropdown-toggle")) {
+            var dropdowns =
+                document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (!openDropdown.classList.contains("hidden")) {
+                    openDropdown.classList.add("hidden");
+                }
+            }
+        }
+    };
+</script>

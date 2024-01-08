@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="output.css" />
         <link rel="stylesheet" href="assets/styles/apply.css" />
-        <title>UOC Boilerplate</title>
+        <title>Participants</title>
     </head>
 
     <body class="bg-black text-white font-sans">
@@ -23,27 +23,7 @@
                     Raquiti Club Esportiu
                 </h2>
             </div>
-            <nav class="pr-5">
-                <div>
-                    <h2 class="text-xl md:text-3xl">Menú de Navegació</h2>
-                </div>
-                <div class="flex justify-center">
-                    <ul class="flex flex-row space-x-4">
-                        <li>
-                            <a href="index.html" class="hover:text-blue-800"
-                                >Inici</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="participants.html"
-                                class="hover:text-red-700"
-                                >Participants</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <include src="./views/nav.html"></include>
         </header>
 
         <main class="p-10">
@@ -225,61 +205,7 @@
                     </div>
                 </article>
             </section>
-            <div class="flex justify-center items-center mt-10">
-                <div class="relative">
-                    <button
-                        onclick="toggleDropdown()"
-                        class="px-4 py-2 bg-blue-800 text-white rounded focus:outline-none focus:ring"
-                    >
-                        Ordenar Candidats
-                    </button>
-
-                    <div
-                        id="dropdown"
-                        class="hidden absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-                    >
-                        <a
-                            href="#"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                            >Ordenar per edat</a
-                        >
-                        <a
-                            href="#"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                            >Ordenar per nom</a
-                        >
-                        <a
-                            href="#"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                            >Ordenar per cognom</a
-                        >
-                    </div>
-                </div>
-            </div>
-            <script>
-                function toggleDropdown() {
-                    var dropdown = document.getElementById("dropdown");
-                    if (dropdown.classList.contains("hidden")) {
-                        dropdown.classList.remove("hidden");
-                    } else {
-                        dropdown.classList.add("hidden");
-                    }
-                }
-
-                window.onclick = function (event) {
-                    if (!event.target.matches(".dropdown-toggle")) {
-                        var dropdowns =
-                            document.getElementsByClassName("dropdown-content");
-                        var i;
-                        for (i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (!openDropdown.classList.contains("hidden")) {
-                                openDropdown.classList.add("hidden");
-                            }
-                        }
-                    }
-                };
-            </script>
+            <include src="./views/button.html"></include>
         </main>
         <include src="./views/footer.html"></include>
         <script type="module" src="./assets/scripts/main.js"></script>
